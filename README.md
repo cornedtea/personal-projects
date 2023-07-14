@@ -14,3 +14,5 @@ A collection of things I've worked on - either in class or on my own time - that
 `tidbits.py` is a collection of smaller functions I've written that are fun to play around with! The ones currently in the file are all from my introductory Python course.
 
 `transparentBG.py` is a program that will take an image that has a grayscale background and a non-grayscale foreground and create a copy of the foreground on a transparent background. I made this because an image for the rock paper scissors program I made had a false transparent background and I didn't want to find a new image.
+
+Note: `imageTools.py` is not mine, it contains code needed for some functions in `tidbits.py` and was provided by a professor to write those functions. Credits for its creation are in the program description.
