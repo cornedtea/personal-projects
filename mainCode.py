@@ -2,15 +2,16 @@
 
 **Rock Paper Scissors Program**
 
-Team Turtle - Courtney Brown, Alana Nadolski, & Blanche Reading
+@author: Courtney Brown <cornedtea@proton.me>
+Made in collaboration with Alana Nadolski & Blanche Reading
 
 Recent Updates:
 
-* NEW: made the slider look a little better on Mac
-* NEW: Added slider for team size.
-* NEW: Better looking buttons on macOS
-* Add platform check in window adjustment function to fix issue with display and speed on Mac
-* Isolate window adjustment to fix issue with display on Mac
+* Made the slider look a little better on macOS
+* Added slider for team size
+* Better looking buttons on macOS
+* Add platform check in window adjustment function to fix issue with display and speed on macOS
+* Isolate window adjustment to fix issue with display on macOS
 * Starting direction will be random
 
 Possible Changes:
