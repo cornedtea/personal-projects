@@ -211,19 +211,19 @@ class RockPaperScissorsLizardSpock:
         question = Label(popup, text='Who do you think will win?')
         question.grid(row=0, column=0, columnspan=5)
         radio_rock = Radiobutton(popup, text='Rock', variable=self.user_guess,
-                                 value='Rock', command=self.display_guess)
+                                 value='Rock')
         radio_rock.grid(row=1, column=0, sticky=W)
         radio_paper = Radiobutton(popup, text='Paper', variable=self.user_guess,
-                                  value='Paper', command=self.display_guess)
+                                  value='Paper')
         radio_paper.grid(row=1, column=1, sticky=W)
         radio_scissors = Radiobutton(popup, text='Scissors', variable=self.user_guess,
-                                     value='Scissors', command=self.display_guess)
+                                     value='Scissors')
         radio_scissors.grid(row=1, column=2, sticky=W)
         radio_lizard = Radiobutton(popup, text='Lizard', variable=self.user_guess,
-                                   value='Lizard', command=self.display_guess)
+                                   value='Lizard')
         radio_lizard.grid(row=1, column=3, sticky=W)
         radio_spock = Radiobutton(popup, text='Spock', variable=self.user_guess,
-                                  value='Spock', command=self.display_guess)
+                                  value='Spock')
         radio_spock.grid(row=1, column=4, sticky=W)
         spacer = Label(popup)
         spacer.grid(row=2, column=0)
@@ -238,7 +238,9 @@ class RockPaperScissorsLizardSpock:
         spacer.grid(row=2, column=4)
 
     # def display_guess(self):
-    #     """ Using this to test guess()"""
+    #     """ Using this to test guess().
+    #     To use, add `, command=display_guess` after the value section
+    #     of each radiobutton in the function above."""
     #     self.guess_label['text'] = 'Your guess: {}'.format(self.user_guess.get())
 
     def populate(self):
