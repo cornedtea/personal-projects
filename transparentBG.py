@@ -1,5 +1,16 @@
-""" Code to create a transparent background for an image on greyscale background
-In this project, this file takes the rock image and returns a transparent background version."""
+"""  ===================================================================
+**Transparent Background Program**
+
+@author: Courtney Brown <cornedtea@proton.me>
+
+Code to create a transparent background for an image on greyscale background
+In this project, this file takes the rock image and returns a transparent background version.
+
+Possible Changes:
+
+* Allow file selection from computer instead of asking for path in sourcecode
+
+"""
 
 from PIL import Image
 import math
@@ -24,6 +35,6 @@ def transparent(filename: str):
 
 
 if __name__ == "__main__":
-    rock_transparent = transparent("Images/lizard.png")
+    rock_transparent = transparent("") # put path for desired image in quotes
     rock_transparent.show()
     rock_transparent.save("Images/lizard.png")
