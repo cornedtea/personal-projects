@@ -2,6 +2,8 @@
 
 **Rock Paper Scissors Lizard Spock Program**
 
+@author: Courtney Brown <cornedtea@proton.me>
+
 """
 
 from tkinter import *
@@ -26,7 +28,7 @@ class RockPaperScissorsLizardSpock:
     INTERFACE_BG_COLOR = '#b1b6bd'  # grey-ish color
 
     class Movable:
-        """ Create movable object for team Rock, Paper, or Scissors"""
+        """ Create movable object for team Rock, Paper, Scissors, Lizard, or Spock."""
         def __init__(self, team_size: int, team: str = 'Rock' or 'Paper' or 'Scissors' or 'Lizard' or 'Spock'):
             self.name = team
             self.x_movement = choice([5, -5])
@@ -159,7 +161,7 @@ class RockPaperScissorsLizardSpock:
         return setup_button, start_button, guess_label, quit_button
 
     def create_teams(self):
-        """ Creates teams of equal size, one each of rock, paper, and scissors."""
+        """ Creates teams of equal size, one each of rock, paper, scissors, lizard, and Spock."""
         rock_objects = []
         paper_objects = []
         scissors_objects = []
@@ -235,9 +237,9 @@ class RockPaperScissorsLizardSpock:
         spacer = Label(popup)
         spacer.grid(row=2, column=4)
 
-    def display_guess(self):
-        """ Using this to test guess()"""
-        self.guess_label['text'] = 'Your guess: {}'.format(self.user_guess.get())
+    # def display_guess(self):
+    #     """ Using this to test guess()"""
+    #     self.guess_label['text'] = 'Your guess: {}'.format(self.user_guess.get())
 
     def populate(self):
         """ Places objects from teams onto canvas. The object lists keeps track of
@@ -265,7 +267,7 @@ class RockPaperScissorsLizardSpock:
         return rock_IDs, paper_IDs, scissors_IDs, lizard_IDs, spock_IDs
 
     def setup1(self):
-        """ First alf of simulation set-up."""
+        """ First half of simulation set-up."""
         self.objects = {}
         self.winner = None
         self.guess_label['text'] = 'Your guess: '
