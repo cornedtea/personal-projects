@@ -1,5 +1,5 @@
 """
-@author: Courtney Brown <cbrown5@macalester.edu>
+@author: Courtney Brown <cornedtea@proton.me>
 """
 
 from tkinter import *
