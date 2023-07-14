@@ -1,5 +1,14 @@
-"""
+"""  ===================================================================
+**TKinter Braille Transliteration Program**
+
 @author: Courtney Brown <cornedtea@proton.me>
+
+Possible Changes:
+
+* Check for accuracy of dictionaries
+* Adjust UI to look cleaner
+* Fix issues with text running off end of screen
+
 """
 
 from tkinter import *
