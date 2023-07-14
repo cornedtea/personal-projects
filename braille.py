@@ -1,5 +1,5 @@
 """  ===================================================================
-**TKinter Braille Transliteration Program**
+**Tkinter Braille Transliteration Program**
 
 @author: Courtney Brown <cornedtea@proton.me>
 
