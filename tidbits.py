@@ -1,5 +1,7 @@
 """
 **Miscellaneous Functions**
+
+Scroll to bottom of document for sample function calls
 """
 
 from imageTools import *
