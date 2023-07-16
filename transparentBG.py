@@ -35,6 +35,6 @@ def transparent(filename: str):
 
 
 if __name__ == "__main__":
-    rock_transparent = transparent("") # put path for desired image in quotes
+    rock_transparent = transparent("Images/rock.png")  # put path for desired image in quotes
     rock_transparent.show()
-    rock_transparent.save("Images/lizard.png")
+    rock_transparent.save("Images/rock.png")  # put path for desired save name in quotes

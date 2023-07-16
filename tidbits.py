@@ -2,6 +2,7 @@
 **Miscellaneous Functions**
 """
 
+from imageTools import *
 
 def pigLatin(stg):
     """
