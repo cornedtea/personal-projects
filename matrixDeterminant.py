@@ -43,21 +43,22 @@ def det(matrix: list, evenOdd: bool = True, i: int = 0, j: int = 0, row_i: list 
     if len(matrix[0]) == 1:
         return matrix[0][0]
     else:
-        matrix_ij = matrix.copy()
-        # if i < len(matrix_ij):
-        #     i += 1
-        #     j += 1
-        # if len(row_i) != 0 and len(col_j) != 0:
-        #     matrix_ij.insert(i, row_i)
-        #     for n in range(len(matrix_ij)):
-        #         matrix_ij[n].insert(j, col_j[n])
-        x_ij = matrix_ij[0][0]
-        if not evenOdd:
-            x_ij *= -1
-        for n in range(len(matrix_ij)):
-            col_j.append(matrix_ij[n].pop(j))
-        row_i = matrix_ij.pop(i)
-        # return x_ij * det(matrix_ij, not evenOdd, i, j, row_i, col_j)
+        for i in range(i):
+            matrix_ij = matrix.copy()
+            # if i < len(matrix_ij):
+            #     i += 1
+            #     j += 1
+            # if len(row_i) != 0 and len(col_j) != 0:
+            #     matrix_ij.insert(i, row_i)
+            #     for n in range(len(matrix_ij)):
+            #         matrix_ij[n].insert(j, col_j[n])
+            x_ij = matrix_ij[0][0]
+            if not evenOdd:
+                x_ij *= -1
+            for n in range(len(matrix_ij)):
+                col_j.append(matrix_ij[n].pop(j))
+            row_i = matrix_ij.pop(i)
+            determinant += x_ij * det(matrix_ij, not evenOdd, i, j, row_i, col_j)
 
 
 if __name__ == "__main__":
