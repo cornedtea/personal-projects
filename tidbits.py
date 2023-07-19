@@ -6,6 +6,7 @@ Scroll to bottom of document for sample function calls
 
 from imageTools import *
 import math
+import random
 import turtle
 import time
 
@@ -148,6 +149,42 @@ def rotatePic(image: Picture, angle: int) -> Picture:
     return pic
 
 
+def background_substitution(oldBG: Picture, newBG: Picture, oldFG: Picture) -> Picture:
+    """
+    Takes an old background with no objects, a new background with no objects, and an image with objects
+    in the foreground of the old background and returns a new image with the foreground objects on the new
+    background.
+    This function was made for an in-class actvity.
+    """
+    newFG = Picture(oldFG.getWidth(), oldFG.getHeight())
+    for (x, y) in oldFG:
+        OFGcol = oldFG.getColor(x, y)
+        OBGcol = oldBG.getColor(x, y)
+        NBGcol = newBG.getColor(x, y)
+        if distance(OFGcol, OBGcol) < 100:
+            newFG.setColor(x, y, NBGcol)
+        else:
+            newFG.setColor(x, y, OFGcol)
+    return newFG
+
+
+def chromakey(oldimg: Picture, newBG: Picture) -> Picture:
+    """
+    Takes an image with objects in the foreground of a greenscreen and a new background with no objects
+    and returns a new image with the foreground objects on the new background.
+    This function was made for an in-class activity.
+    """
+    newFG = Picture(oldimg.getWidth(), oldimg.getHeight())
+    for (x, y) in newFG:
+        (r, g, b) = oldimg.getColor(x, y)
+        newCol = newBG.getColor(x, y)
+        if g > r and g > b:
+            newFG.setColor(x, y, newCol)
+        else:
+            newFG.setColor(x, y, (r, g, b))
+    return newFG
+
+
 def dragonOfEve(turt: turtle.Turtle, dist, reps: int) -> None:
     """
     Given a turtle, a distance, and an integer number of repetitions, draw the fractal known as
@@ -221,9 +258,19 @@ if __name__ == "__main__":
     # Change image path in quotations or integer angle to experiment
     # rotatePic(Picture("Images/butterfly.jpg"), 45).show()
 
-    # input("Press any key to end: ")  # For use with all image-generating functions (i.e. mosaic)
+    # Sample call for background_substitution() and chromakey()
+    # Change image paths in quotations to change
+    old_background = Picture("Images/green.png")  # image with just the old background
+    new_background = Picture("Images/blue.png")  # image with the desired background
+    foreground = Picture("Images/greenRock.png")  # image with desired foreground
+    # foreground must be on greenscreen for chromakey or on old background for background sub
+    # new and old backgrounds must be same size (e.g. 1000 x 1000)
+    background_substitution(old_background, new_background, foreground).show()
+    chromakey(foreground, new_background).show()
+
+    input("Press any key to end: ")  # For use with all image-generating functions (i.e. mosaic)
 
     # Sample call for runDragonOfEve()
     # Change the 1st and 2nd integers to change start and end repetitions
     # Change the 3rd number to change line length (300 is recommended)
-    runDragonOfEve(1, 5, 300)
+    # runDragonOfEve(1, 5, 300)
